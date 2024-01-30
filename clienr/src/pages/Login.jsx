@@ -7,20 +7,17 @@ import Layout from "../component/Layout";
 
 const Login = () => {
   const navigate=useNavigate();
-  const [err, setErr] = useState("")
   const [email,setEmail]= useState("");
   const [password,setPassword]=useState("");
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    const newUser = {email,password};
     try {
-     const response = await axios.post("http://localhost:8080/api/users/login", newUser);
+     const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`, {email,password});
      navigate('/')
       console.log( response)
     } catch (error) {
-      setErr( error.response.data.message)
-      console.log("err", error.response.data)
+        console.log(error)
       
 
     }   
@@ -49,7 +46,7 @@ const Login = () => {
             <input className="password" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}></input>
           </div>
           <div>
-            {err && <p>{err}</p>}
+            {/* {err && <p>{err}</p>} */}
           </div>
           <span className="forget">Forget your Password</span>
           <Link className="forget" to='/Signup'>Sign up </Link>

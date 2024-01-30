@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import "./Styles/signup.css"
 import image1 from '../assets/images/image 1174.png'
 import axios from 'axios';
-import { Toast, toast } from 'react-toastify';
+
 import {Link,useNavigate} from 'react-router-dom'
 import Layout from "../component/Layout";
 const Signup = () => {
@@ -14,19 +14,16 @@ const Signup = () => {
       e.preventDefault();
   
       try {
-       const response = await axios.post(`${process.env.REACT_APP_API}/api/vi/auth/register`, {name,email,password});
+       const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {name,email,password});
        if(response.data.success){
-        toast.success(response.data.message)
         navigate('/login');
 
        }
        else{
-        toast.error(response.data.message)
        }
         console.log(response)
       } catch (error) {
         console.log( error)
-        toast.error(`something went wrong`)
         
       }
      
