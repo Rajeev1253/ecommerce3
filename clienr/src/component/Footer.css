@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 479px;
+    
+
+}
+h1{
+    display: inline-block;
+}
+.footer{
+height: 479px;
+background-color: #EEEFFB;
+}
+
+.inputField{
+    margin-top:31px ;
+    display: flex;
+    width: 377px;
+    height: 44px;
+    border-radius: 3px;
+    border: 1px solid #FFF;
+    background-color:white;
+    opacity: 1;
+}
+.inputField>input{
+    width: 240px;
+    height: 44px;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid #FFF;
+}
+.inputField>button{
+    width: 135px;
+    height: 47px;
+    border-radius: 3px;
+    border-radius: 3px;
+    background: var(--Accent, #FB2E86);
+    border-radius: 3px;
+    color: white;
+    z-index: 10;
+    font-size: 16px;
+}
+.contact{
+    color:#8A8FB9;
+    margin-top: 25px;
+}
+.categories>ul{
+    list-style: none;
+    color: #8A8FB9;
+    margin-top:42px
+    
+}
+.categories>ul>li{
+    margin-top: 21px;
+}
+.CustomerCare>ul{
+    list-style: none;
+    color: #8A8FB9;
+    margin-top:42px
+}
+.CustomerCare>ul>li{
+    margin-top: 21px;
+
+}
+.pages2>ul{
+    list-style: none;
+    color: #8A8FB9;
+    margin-top:42px
+
+}
+.pages2>ul>li{
+    margin-top: 21px;
+
+}

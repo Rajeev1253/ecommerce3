@@ -1,0 +1,85 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.headerTop{
+
+    display: flex;
+    justify-content: space-evenly;
+    height: 44px;
+    background-color:  #7E33E0;
+    border: 1px solid;
+    color: #F1F1F1;
+    align-items: center;
+}
+.mail
+{
+    display: flex;
+    align-items: center;
+}
+.mail-text.visited{
+    color: #fb2e86;;
+
+}
+.mail-text{
+color: #F1F1F1;
+padding-left: 10px;
+font-family: "Josefin Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+}
+.call{
+    display: flex;
+    padding-left: 48px;
+    align-items: center;
+}
+.call-text{
+    padding-left: 10px;
+    font-size: 16px;
+    width: 97px;
+    height:16px;
+}
+.right-side{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    color: #F1F1F1;
+    font-family: "Josefin Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    
+}
+.Eng{
+    display: flex;
+    align-items: center;
+}
+.USD{
+    display: flex;
+    align-items: center;
+}
+.login-icon{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.whish{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap:10px
+}
+.cart{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    flex-shrink: 0;
+}

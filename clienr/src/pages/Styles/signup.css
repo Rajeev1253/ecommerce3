@@ -1,0 +1,87 @@
+.signupBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 544px;
+    height: 600px;
+    background: #fff;
+    box-shadow: 0px 0px 25px 10px #f8f8fb;
+    margin-top: 280px;
+  }
+  .inputBox {
+    padding-top: 20px;
+    text-align: center;
+  }
+  .inputBox>input {
+    width: 432px;
+    height: 52px;
+    padding-top: 10px;
+    margin: 10px;
+  }
+  .companies2{
+    display: flex;
+    margin-top: 250px;
+    margin-bottom: 109px;
+    justify-content: center;
+  }
+  .main-heading {
+    color: #101750;
+    font-family: "Josefin Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+  }
+  .main-heading > h3 {
+      color: #000;
+      font-family: "Josefin Sans";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .main-heading > p {
+      padding-top: 7px;
+      color: #9096b2;
+      font-family: Lato;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .SignIn {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .sign-in {
+      width: 432px;
+      height: 47px;
+      flex-shrink: 0;
+      border-radius: 3px;
+      background: #fb2e86;
+      border: 1px solid #fb2e86;
+      color:#fff;
+      font-size:16px
+    }
+    .user{
+      padding-left: 55px;
+      color: #9096b2;
+      font-family: Lato;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+  
+    }
+    .already{
+      padding-top: 7px;
+      color: #9096b2;
+      font-family: Lato;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center;
+  
+    }
