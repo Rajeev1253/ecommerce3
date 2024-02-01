@@ -1,21 +1,33 @@
 import React, { useState } from "react";
 import image1 from '../assets/images/image 1174.png'
 import "./Styles/login.css"
-import {Link, useNavigate} from "react-router-dom";
+import {Link, json, useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Layout from "../component/Layout";
+import { useAuth } from "../context/Auth";
+import  { toast}  from 'react-toastify';
 
 const Login = () => {
   const navigate=useNavigate();
   const [email,setEmail]= useState("");
   const [password,setPassword]=useState("");
+  const [auth,setAuth]=useAuth();
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     try {
-     const response = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`, {email,password});
+     const response = await axios.post("http://localhost:8080/api/v1/auth/login", {email,password});
      navigate('/')
+     if(response.data.success){
+      setAuth({
+        ...auth,
+        user:response.data.user,
+        token:response.data.token
+      })
+      localStorage.setItem('auth',JSON.stringify(response.data))
+     }
       console.log( response)
+
     } catch (error) {
         console.log(error)
       

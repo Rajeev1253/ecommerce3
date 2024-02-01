@@ -5,8 +5,18 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import CallIcon from "@mui/icons-material/Call";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useAuth } from "../context/Auth";
 export default function Header() {
+  const [auth,setAuth]= useAuth();
+  const handleLogout = ()=>{
+    setAuth({
+      ...auth,user:null,token:''
+    })
+    localStorage.removeItem('auth')
+  }
   return (
+
+
     <div className="header">
       <div className="headerTop">
         <div className="header-left">
@@ -28,9 +38,21 @@ export default function Header() {
             <p>USD</p>
             <KeyboardArrowDownIcon />
           </div>
-          <div className="login-icon">
+          { !auth.user ? (
+            <>
+            <div className="login-icon">
             <a href="/login">Login</a>
           </div>
+
+            </>
+          ) :(
+            <>
+            <div className="login-icon">
+            <a onClick={handleLogout} href="/login">Logout</a>
+            </div>
+            </>
+          ) }
+          
           <div className="whish">
             <p>WhishList</p>
             <FavoriteBorderIcon />

@@ -64,9 +64,11 @@ line-height: normal;
     display: flex;
     align-items: center;
 }
-.login-icon{
+.login-icon>a{
     display: flex;
     align-items: center;
+    color: white;
+    text-decoration: none;
     
     
 }
