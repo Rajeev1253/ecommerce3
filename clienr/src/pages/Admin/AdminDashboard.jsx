@@ -1,10 +1,13 @@
 import React from 'react'
 import Layout from '../../component/Layout'
+import Adminmenu from '../../component/Adminmenu'
 
 const AdminDashboard = () => {
   return (
     <Layout>
-      <h1>Admin Dashboard</h1>
+    <div className='container'>
+      <Adminmenu/>
+    </div>
     </Layout>
 
     )

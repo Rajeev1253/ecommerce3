@@ -6,19 +6,23 @@ import Spinner from "../Spinner";
 
 export default function AdminRoute() {
   const [ok, setoK] = useState(false);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get("/api/v1/auth/admin-auth");
-      if (res.data.ok) {
-        setoK(true);
-      } else {
-        setoK(false);
+      try {
+        const res = await axios.get("/api/v1/auth/admin-auth");
+        if (res.data.ok) {
+          setoK(true);
+        } else {
+          setoK(false);
+        }
+      } catch (error) {
+        console.log(error)
       }
     };
     if (auth?.token) authCheck();
   }, [auth?.token]);
 
-  return ok ? <Outlet /> : <Spinner />;
+  return ok ? <Outlet /> : <Spinner path="/"/>;
 }

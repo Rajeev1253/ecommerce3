@@ -10,12 +10,15 @@ const Forget = () => {
     const [email,setEmail]= useState("");
     const [newpassword,setnewPassword]=useState("");
     const [answer,setAnswer]= useState("")
-    const handleSubmit = async(e) => {
+    const handleSubmit = async(e,req,res) => {
       e.preventDefault();
+    
   
       try {
        const response = await axios.post("http://localhost:8080/api/v1/auth/forgot-password", {email,answer,newpassword});
+       console.log(response)
        navigate('/login')
+      
        
         console.log( response)
   
