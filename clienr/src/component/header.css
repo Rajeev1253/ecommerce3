@@ -85,3 +85,14 @@ line-height: normal;
     align-items: center;
     flex-shrink: 0;
 }
+li{
+    list-style: none;
+    color: white;
+
+}
+.dropdown-menu{
+    color: white;;
+}
+li>a{
+    color: white;
+}

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import image1 from '../assets/images/image 1174.png'
 import "./Styles/login.css"
-import {Link, json, useNavigate} from "react-router-dom";
+import {Link, useNavigate,useLocation} from "react-router-dom";
 import axios from 'axios';
 import Layout from "../component/Layout";
 import { useAuth } from "../context/Auth";
-import  { toast}  from 'react-toastify';
 
 const Login = () => {
   const navigate=useNavigate();
+  const location= useLocation();
   const [email,setEmail]= useState("");
   const [password,setPassword]=useState("");
   const [auth,setAuth]=useAuth();
@@ -17,7 +17,7 @@ const Login = () => {
 
     try {
      const response = await axios.post("http://localhost:8080/api/v1/auth/login", {email,password});
-     navigate('/')
+     navigate(location.state||'/')
      if(response.data.success){
       setAuth({
         ...auth,
@@ -60,7 +60,7 @@ const Login = () => {
           <div>
             {/* {err && <p>{err}</p>} */}
           </div>
-          <span className="forget">Forget your Password</span>
+          <span className="forget" onClick={()=>{navigate('/forget')}}>Forget your Password</span>
           <Link className="forget" to='/Signup'>Sign up </Link>
           <div className="SignIn">
           <button onClick={handleSubmit} className="sign-in">Sign</button>

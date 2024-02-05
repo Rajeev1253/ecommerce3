@@ -6,6 +6,7 @@ import CallIcon from "@mui/icons-material/Call";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useAuth } from "../context/Auth";
+import { NavLink } from "react-router-dom";
 export default function Header() {
   const [auth,setAuth]= useAuth();
   const handleLogout = ()=>{
@@ -37,8 +38,8 @@ export default function Header() {
           <div className="USD">
             <p>USD</p>
             <KeyboardArrowDownIcon />
-          </div>
-          { !auth.user ? (
+            </div>
+          { !auth.user?(
             <>
             <div className="login-icon">
             <a href="/login">Login</a>
@@ -47,9 +48,19 @@ export default function Header() {
             </>
           ) :(
             <>
-            <div className="login-icon">
-            <a onClick={handleLogout} href="/login">Logout</a>
-            </div>
+            
+            <li className="nav-item dropdown">
+            <a clasName="nav-link dropdown-toggle " href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {auth?.user?.name}
+            </a>
+            <ul class="dropdown-menu">
+              <li><NavLink to ={`/dashboard/${auth?.user?.role===1?"admin":"user"}`} className="dropdown-item" >Dashboard</NavLink></li>
+              <li><a to="/login" onClick={handleLogout} >Logout</a> </li> 
+            </ul>
+          </li>
+
+
+
             </>
           ) }
           

@@ -81,6 +81,7 @@
     font-weight: 400;
     line-height: normal;
     margin-top: 17px;
+    cursor: pointer;
   }
   .SignIn {
     margin-top: 34px;
